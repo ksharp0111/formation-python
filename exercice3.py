@@ -14,6 +14,8 @@ def est_mot_de_passe_valide(mot_de_passe):
 
 password = input("Entrez votre mot de passe : ")
 
+
+# entré du mot de passe pour verification
 if est_mot_de_passe_valide(password):
     print("mot de passe valide.")
 
