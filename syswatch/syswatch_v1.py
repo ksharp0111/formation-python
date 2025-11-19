@@ -7,7 +7,6 @@ SysWatch v1.0 - Monitoring système basique
 import platform
 import psutil
 
-
 def info_sys():
     """ Affiche les info système """
     print("\n=== Système ===")
@@ -89,3 +88,4 @@ def main():
 # point d'entrée
 if __name__ == "__main__":
     main()
+
