@@ -48,11 +48,28 @@ def info_memoire():
     # Formatage avec deux décimales
     print(f"Total: {total_gb:.2f} GB")
     print(f"Disponible: {disponible_gb:.2f}")
-    print(f"Utilisation {memoire_percent}%")
+    print(f"Utilisation {memoire.percent}%")
 
 
+def info_disque():
+    """ Affiche les infos des disques"""
+    print("\n=== Disques ===")
 
+    # Récupération des partitions
+    partitions = psutil.disk_partitions()
 
+    for partition in partitions:
+        point_montage = partition.mountpoint
+
+        try:
+            # Utilisation du disque
+            usage = psutil.disk_usage(point_montage)
+            print(f"{point_montage} : {usage.percent}% utilisé")
+
+        except PermissionError:
+            # partition inaccessible
+            print(f"{point_montage} : Accès refuser")
+            continue
 
 
 
