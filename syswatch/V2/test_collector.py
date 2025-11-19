@@ -1,9 +1,9 @@
 import collector
 import json
 
-data = collector.collector_cpu()
+data = collector.collect_cpu()
 print("CPU data: ", data)
 
-tout = collector.collecter_tout()
+tout = collector.collect_all()
 
 print(json.dumps(tout, indent=2, default=str))
