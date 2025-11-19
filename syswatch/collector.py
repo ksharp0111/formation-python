@@ -9,7 +9,6 @@ import platform
 import psutil
 from datetime import datetime
 
-
 def collect_sys():
     """
     Collecte les informations générales du système.
@@ -21,6 +20,7 @@ def collect_sys():
         'hostname': platform.node(),
         'python': platform.python_version()
     }
+
 
 def collect_cpu():
     """
@@ -40,7 +40,7 @@ def collect_memoire():
     memoire = psutil.virtual_memory()
     return {
         'total': memoire.total,
-        'disponnible': memoire.available,
+        'disponible': memoire.available,
         'pourcentage': memoire.percent
     }
 
@@ -49,7 +49,7 @@ def collect_disque():
     """
     Collecte les infos des disques.
     """
-    disques = []
+    disques = []        # variable de stockage des info des disques et des partitions
     partitions = psutil.disk_partitions()
 
     for partition in partitions:
@@ -67,6 +67,7 @@ def collect_disque():
             # partition inaccessible ignorées
             continue
     return disques
+
 
 def collect_all():
     """
