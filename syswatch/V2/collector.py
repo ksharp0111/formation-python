@@ -9,6 +9,7 @@ import platform
 import psutil
 from datetime import datetime
 
+
 def collect_sys():
     """
     Collecte les informations générales du système.
