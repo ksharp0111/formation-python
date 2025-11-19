@@ -7,6 +7,7 @@ SysWatch v1.0 - Monitoring système basique
 import platform
 import psutil
 
+
 def info_sys():
     """ Affiche les info système """
     print("\n=== Système ===")
@@ -20,14 +21,11 @@ def info_sys():
 def info_cpu():
     """" Affiche les infos du processeur"""
     print("\n=== CPU ===")
-
     # Nombre de coeurs
     coeurs_ph = psutil.cpu_count(logical=False)
     coeurs_lo = psutil.cpu_count(logical=True)
-    
     print(f"Coeurs physique: {coeurs_ph}")
     print(f"Coeurs logique: {coeurs_lo}")
-
     # Utilisation CPU
     utilisation = psutil.cpu_percent(interval=1)
     print(f"Utilisation: {utilisation}%")
@@ -90,4 +88,4 @@ def main():
 
 # point d'entrée
 if __name__ == "__main__":
-    info_sys()
+    main()
