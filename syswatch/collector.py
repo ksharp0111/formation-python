@@ -59,7 +59,7 @@ def collect_disque():
             disques.append({
                 'point_montage': partition.mountpoint,
                 'total': usage.total,
-                'utilise': usage,used,
+                'utilise': usage.used,
                 'pourcentage': usage.percent
             })
         
