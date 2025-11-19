@@ -72,13 +72,22 @@ def info_disque():
             continue
 
 
+def main():
+    """ Fonction prinncipale """
 
+    # Afficher le titre
+    print("=" * 50)
+    print("SysWatch v1.0 - Monitoring Système")
+    print("=" * 50)
 
+    # Appel des fonctions d'affichages d'etat
+    info_sys()
+    info_cpu()
+    info_memoire()
+    info_disque()
 
+    print("=" * 50)
 
-
-
-
-
+# point d'entrée
 if __name__ == "__main__":
     info_sys()
